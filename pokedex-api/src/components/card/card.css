@@ -1,0 +1,7 @@
+.btn.btn-outline-light {
+  background-color: rgb(220, 10, 45);
+}
+.btn.btn-outline-light:hover, .btn.btn-outline-light:focus {
+  background-color: rgb(172, 11, 38);
+  color: white;
+}/*# sourceMappingURL=card.css.map */

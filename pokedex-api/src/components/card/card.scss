@@ -1,0 +1,10 @@
+.btn{
+    &.btn-outline-light {
+        background-color: rgb(220,10,45);
+            &:hover,
+            &:focus{
+                    background-color : rgb(172, 11, 38);
+                    color : white;
+        }
+    }
+}
