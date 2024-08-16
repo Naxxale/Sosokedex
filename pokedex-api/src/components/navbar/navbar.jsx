@@ -9,7 +9,7 @@ function NavbarPerso() {
   return (
     <Navbar expand="lg" bg="myBgColor" variant="light">
       <Container fluid>
-        <Navbar.Brand as={Link} to="/" className="ms-5">
+        <Navbar.Brand as={Link} to="/homepage" className="ms-5">
           <Image 
             alt="logo"
             src="./src/assets/img/logo-masterball.png"
