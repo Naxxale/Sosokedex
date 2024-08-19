@@ -2,14 +2,15 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import "./card.scss";
 
-function PokemonCard() {
+function PokemonCard({name, type, image, habitat}) {
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="./src/assets/img/sosomonfeu.jpg" />
+      <Card.Img variant="top" src="{image}" />
       <Card.Body>
-        <Card.Title>Nom Pokémon</Card.Title>
+        <Card.Title>{name}</Card.Title>
         <Card.Text>
-         Yo je suis un pokémon.
+         Type : {type}
+         Habitat : {habitat}
         </Card.Text>
         <Button className="btn btn-outline-light">Pokemon</Button>
       </Card.Body>
