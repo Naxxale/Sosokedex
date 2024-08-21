@@ -10,6 +10,7 @@ class PokemonController extends BaseController
         parent::__construct($method, $id);
     }
 
+    // Méthode pour récupérer tous les Pokémon
     protected function get() : array
     {
         $repository = new PokemonRepository();
