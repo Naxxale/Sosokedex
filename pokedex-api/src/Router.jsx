@@ -12,7 +12,7 @@ function AppRouter() {
     <NavbarPerso/>
       <Routes>
       <Route path="/homepage" element={<HomePage />} />
-        <Route path="/" element={<PokemonList />} />
+        <Route path="/pokemon" element={<PokemonList />} />
         <Route path="/details" element={<PokemonDetail />} />
         <Route path="/affinity" element={<PokemonAffinity />} />
       </Routes>

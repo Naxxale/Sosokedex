@@ -2,5 +2,6 @@
 
 class Pokemon extends BaseModel
 {
-public ?string $nom_type;
+    public ?int $Id_Type;
+    public ?string $nom_type;
 }

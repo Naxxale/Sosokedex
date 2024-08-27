@@ -20,7 +20,7 @@ function NavbarPerso() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
           <Nav className="w-100 d-flex justify-content-around">
-            <Nav.Link as={Link} to="/">Les Pokémons</Nav.Link>
+            <Nav.Link as={Link} to="/pokemon">Les Pokémons</Nav.Link>
             <Nav.Link as={Link} to="/affinity">Les affinités</Nav.Link>
             <NavDropdown title="Les types" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/type/acier">Acier</NavDropdown.Item>
