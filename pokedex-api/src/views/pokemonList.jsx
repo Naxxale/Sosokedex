@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import fetchPokemons from '../services/fetchPokemons';
 import PokemonCard from '../components/card/card';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const PokemonList = () => {
     const [pokemons, setPokemons] = useState([]);
@@ -19,21 +20,25 @@ const PokemonList = () => {
     }, []);
 
     return (
-        <div className="pokemon-list">
-            {pokemons.length > 0 ? (
-                pokemons.map(pokemon => (
-                    <PokemonCard
-                        key={pokemon.Id_Pokemon} 
-                        name={pokemon.nom_pokemon}
-                        type={pokemon.Id_Type} 
-                        image={pokemon.img_src} 
-                        habitat={pokemon.Id_habitats} 
-                    />
-                ))
-            ) : (
-                <p>Loading...</p>
-            )}
-        </div>
+        <Container>
+            <Row>
+                    {pokemons.length > 0 ? (
+                        pokemons.map(pokemon => (
+                            <Col key={pokemon.Id_Pokemon} xs={12} sm={6} md={4} lg={3} className="mb-4">
+                                <PokemonCard
+                                    key={pokemon.Id_Pokemon} 
+                                    name={pokemon.nom_pokemon}
+                                    type={pokemon.nom_type} 
+                                    image={pokemon.img_src} 
+                                    habitat={pokemon.nom_habitat} 
+                                />
+                            </Col>
+                        ))
+                    ) : (
+                        <p>Loading...</p>
+                    )}
+            </Row>
+        </Container>
     );
 };
 

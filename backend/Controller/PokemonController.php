@@ -14,7 +14,8 @@ class PokemonController extends BaseController
     protected function get() : array
     {
         $repository = new PokemonRepository();
-        return $repository->getAll([]);
+        return $repository->getPokemon();
+        //Requête sql
     }
 
     //  obtenir un Pokémon spécifique par son ID
