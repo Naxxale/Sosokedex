@@ -7,8 +7,15 @@ import images from '../../assets/img/imagesImports';
 // Reception des données en tant que props
 const PokemonCard = ({ name, type, habitat }) => {
   
-  // Utilise le nom pour obtenir l'image
-  const pokemonImage = images[name.toLowerCase()] || '';
+  const sanitizeName = (name) => {
+    return name
+        .normalize('NFD') // Normalisation pour séparer les accents
+        .replace(/[\u0300-\u036f]/g, '') // Suppression des accents
+        .replace(/[^a-zA-Z0-9]/g, '_') // Remplacement des caractères spéciaux par des underscores
+        .toLowerCase(); // Conversion en minuscule
+};
+
+const pokemonImage = images[sanitizeName(name)] || '';
 
   return (
       <Card style={{ width: '18rem' }}>

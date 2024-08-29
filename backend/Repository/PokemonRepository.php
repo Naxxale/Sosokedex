@@ -21,5 +21,14 @@ class PokemonRepository extends BaseRepository {
     return $pokemons;
     }
 
-
+    public function getPokemonsByType($typeId) {
+        $sql = "SELECT p.Id_Pokemon, p.nom_pokemon, p.img_src, t.nom_type, h.nom_habitat
+                FROM Pokemon p
+                JOIN Types t ON p.Id_Type = t.Id_Type
+                JOIN Habitats h ON p.Id_habitats = h.Id_habitats
+                WHERE t.Id_Type = :typeId";
+        
+        $queryResponse = $this->preparedQuery($sql, ['typeId' => $typeId]);
+        return $queryResponse->statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

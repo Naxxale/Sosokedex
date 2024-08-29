@@ -24,6 +24,10 @@ class PokemonController extends BaseController
         $repository = new PokemonRepository();
         return $repository->getOneById($this->id);
     }
-    //Obtention par type ?
-    //Obtention par habitats ?
+  
+    protected function getByType($typeId) : array{
+        $repository = new PokemonRepository();
+        return $repository->getPokemonsByType($this->$typeId);
+    }
+   
 }
