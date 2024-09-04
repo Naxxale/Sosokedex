@@ -1,0 +1,92 @@
+Table {
+    margin: 5px;
+    
+
+    //Couleur des cellules de type
+    .acierColor{
+        background-color: rgb(184, 184, 208);
+    }
+    .combatColor{
+        background-color: rgb(153, 64, 37);
+    }
+    .dragonColor{
+        background-color: rgb(68, 139, 149);
+    }
+    .eauColor{
+        background-color: rgb(104, 144, 240);
+    }
+    .electrikColor{
+        background-color: rgb(248, 208, 48);
+    }
+    .féeColor{
+        background-color: rgb(240, 182, 188);
+    }
+    .feuColor{
+        background-color: rgb(240, 128, 48);
+    }
+    .glaceColor{
+        background-color: rgb(135, 209, 243);
+    }
+    .insecteColor{
+        background-color: rgb(168, 184, 32);
+    }
+    .normalColor{
+        background-color: rgb(168, 168, 120);
+    }
+    .planteColor{
+        background-color: rgb(120, 200, 80);
+    }
+    .poisonColor{
+        background-color: rgb(160, 64, 160);
+    }
+    .psyColor{
+        background-color: rgb(248, 88, 136);
+    }
+    .rocheColor{
+        background-color: rgb(184, 160, 56);
+    }
+    .solColor{
+        background-color: rgb(224, 192, 104);
+    }
+    .spectreColor{
+        background-color: rgb(112, 88, 152);
+    }
+    .ténèbresColor{
+        background-color: rgb(112, 88, 72);
+    }
+    .volColor{
+        background-color: rgb(168, 144, 240);
+    }
+
+    //Couleur des cellules d'affinités
+    //x2
+    .superEfficace{
+        background-color: rgb(171, 240, 144);
+    }
+    //x1
+    .efficace{
+        background-color: rgb(240, 234, 144);
+    }
+    //x0.5
+    .pasEfficace{
+        background-color: rgb(240, 187, 144);
+    }
+    //x0
+    .insensible{
+        background-color: rgb(240, 144, 144);
+    }
+
+
+    th {
+        width: 50px;
+        text-align: center; 
+    }
+    
+    td {
+        text-align: center; 
+        &:first-child{
+            max-width: 50px;
+        }
+    }
+
+}

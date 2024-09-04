@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import PokemonCard from '../components/card/card';
 import { Container, Row, Col } from 'react-bootstrap';
 
@@ -9,7 +8,7 @@ const PokemonListByType = ({ typeId }) => {
     useEffect(() => {
         const getPokemonsByType = async () => {
             try {
-                const response = await fetch(`/pokemons/type/${typeId}`);
+                const response = await fetch(`http://sosokedex-back/pokemons/type/${typeId}`);
                 const data = await response.json();
                 setPokemons(data);
             } catch (error) {
@@ -18,7 +17,7 @@ const PokemonListByType = ({ typeId }) => {
         };
     
         getPokemonsByType();
-    }, [typeId]);
+    }, []);
 
     return (
         <Container>
@@ -43,9 +42,5 @@ const PokemonListByType = ({ typeId }) => {
     );
 };
 
-// Définir les PropTypes pour valider les props
-PokemonListByType.propTypes = {
-    typeId: PropTypes.number.isRequired, // typeId est un nombre requis
-};
 
 export default PokemonListByType;

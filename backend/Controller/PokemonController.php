@@ -18,13 +18,7 @@ class PokemonController extends BaseController
         //Requête sql
     }
 
-    //  obtenir un Pokémon spécifique par son ID
-    protected function getOneById() : ?array
-    {
-        $repository = new PokemonRepository();
-        return $repository->getOneById($this->id);
-    }
-  
+    //  obtenir un Pokémon spécifique par son type
     protected function getByType($typeId) : array{
         $repository = new PokemonRepository();
         return $repository->getPokemonsByType($this->$typeId);

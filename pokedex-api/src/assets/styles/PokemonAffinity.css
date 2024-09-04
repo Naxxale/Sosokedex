@@ -1,0 +1,80 @@
+@charset "UTF-8";
+Table {
+  margin: 5px;
+}
+Table .acierColor {
+  background-color: rgb(184, 184, 208);
+}
+Table .combatColor {
+  background-color: rgb(153, 64, 37);
+}
+Table .dragonColor {
+  background-color: rgb(68, 139, 149);
+}
+Table .eauColor {
+  background-color: rgb(104, 144, 240);
+}
+Table .electrikColor {
+  background-color: rgb(248, 208, 48);
+}
+Table .féeColor {
+  background-color: rgb(240, 182, 188);
+}
+Table .feuColor {
+  background-color: rgb(240, 128, 48);
+}
+Table .glaceColor {
+  background-color: rgb(135, 209, 243);
+}
+Table .insecteColor {
+  background-color: rgb(168, 184, 32);
+}
+Table .normalColor {
+  background-color: rgb(168, 168, 120);
+}
+Table .planteColor {
+  background-color: rgb(120, 200, 80);
+}
+Table .poisonColor {
+  background-color: rgb(160, 64, 160);
+}
+Table .psyColor {
+  background-color: rgb(248, 88, 136);
+}
+Table .rocheColor {
+  background-color: rgb(184, 160, 56);
+}
+Table .solColor {
+  background-color: rgb(224, 192, 104);
+}
+Table .spectreColor {
+  background-color: rgb(112, 88, 152);
+}
+Table .ténèbresColor {
+  background-color: rgb(112, 88, 72);
+}
+Table .volColor {
+  background-color: rgb(168, 144, 240);
+}
+Table .superEfficace {
+  background-color: rgb(171, 240, 144);
+}
+Table .efficace {
+  background-color: rgb(240, 234, 144);
+}
+Table .pasEfficace {
+  background-color: rgb(240, 187, 144);
+}
+Table .insensible {
+  background-color: rgb(240, 144, 144);
+}
+Table th {
+  width: 50px;
+  text-align: center;
+}
+Table td {
+  text-align: center;
+}
+Table td:first-child {
+  max-width: 50px;
+}/*# sourceMappingURL=PokemonAffinity.css.map */
