@@ -26,13 +26,27 @@ class Router{
         $method = strtolower(HttpRequest::get(HttpReqAttr::METHOD));
 
         //Si l'URL contient un identifiant (par exemple /pokemon/12), cette ligne extrait cet identifiant et le convertit en entier. Si aucun identifiant n'est présent, la valeur par défaut est 0.
-        $id = intval(HttpRequest::get(HttpReqAttr::ROUTE)[1] ?? 0);
+        $routeParams = HttpRequest::get(HttpReqAttr::ROUTE);
+        $id = isset($routeParams[1]) ? intval($routeParams[1]) : 0;
 
         //Enfin, une instance du contrôleur est créée en utilisant la classe dynamique précédemment générée. Le constructeur du contrôleur reçoit la méthode HTTP ($method) et l'identifiant ($id).
         $this->controllerInstance = new $controllerClassName($method, $id);
-    }
 
-    //Retourne le résultat au client sous forme de réponse HTTP.
+
+    // Vérifiez si nous avons un paramètre pour le type
+    if ($method === 'get' && isset($routeParams[1])) {
+        $typeName = $routeParams[1];
+
+        // Appeler la méthode getByType si elle existe
+        if ($this->controllerInstance instanceof PokemonController && method_exists($this->controllerInstance, 'getByType')) {
+                // Appeler getByType directement sur l'instance de PokemonController
+                $this->controllerInstance = $this->controllerInstance->getByType($typeName);
+        } else {
+                HttpResponse::SendNotFound(true);
+        }
+    }
+}
+
     public function start() : void
     {
         HttpResponse::SendOK($this->controllerInstance->execute());

@@ -5,5 +5,5 @@ use Core\HttpResponse;
 
 class TypeController extends BaseController
 {
-    
+
 }

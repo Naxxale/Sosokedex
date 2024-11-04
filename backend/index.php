@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 }
 
 function autoload($className) {
-    $classFilePath = "$className.php";
+    $classFilePath = __DIR__ . "/$className.php";
     if (file_exists($classFilePath)) {
         require_once $classFilePath;
     }

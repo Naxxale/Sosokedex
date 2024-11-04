@@ -2,22 +2,32 @@ import { useEffect, useState } from 'react';
 import PokemonCard from '../components/card/card';
 import { Container, Row, Col } from 'react-bootstrap';
 
-const PokemonListByType = ({ typeId }) => {
+const PokemonListByType = ({ nom_type }) => {
     const [pokemons, setPokemons] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getPokemonsByType = async () => {
+            if (!nom_type) {
+                console.error('No type ID provided');
+                return;
+            }
             try {
-                const response = await fetch(`http://sosokedex-back/pokemons/type/${typeId}`);
+                const response = await fetch(`http://sosokedex-back/pokemons/type/${nom_type}`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
                 const data = await response.json();
                 setPokemons(data);
             } catch (error) {
                 console.error('Error fetching pokemons by type:', error);
+            }finally {
+                setLoading(false);
             }
         };
     
         getPokemonsByType();
-    }, []);
+    }, [nom_type]);
 
     return (
         <Container>

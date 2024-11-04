@@ -13,6 +13,7 @@ class BaseController
     public function __construct($method, $id)
     {
         $this->method = $method;
+        $this->id = intval($id);
         $methodNotExists = !method_exists(get_called_class(), $this->method);
         HttpResponse::SendNotFound($methodNotExists); 
         $this->id = $id; 

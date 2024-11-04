@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 import "./card.scss";
 import images from '../../assets/img/imagesImports';
+import { Link } from 'react-router-dom';
 
 // Reception des données en tant que props
 const PokemonCard = ({ name, type, habitat }) => {
@@ -18,7 +19,7 @@ const PokemonCard = ({ name, type, habitat }) => {
 const pokemonImage = images[sanitizeName(name)] || '';
 
   return (
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem', height: '35rem' }}>
           <Card.Img variant="top" src={pokemonImage} />
           <Card.Body>
               <Card.Title>{name}</Card.Title>
@@ -26,7 +27,7 @@ const pokemonImage = images[sanitizeName(name)] || '';
                   Type : {type} <br />
                   Habitat : {habitat}
               </Card.Text>
-              <Button className="btn btn-outline-light">Détails Pokémon</Button>
+              <Button className="btn btn-outline-light" as={Link} to="/details">Détails Pokémon</Button>
           </Card.Body>
       </Card>
   );

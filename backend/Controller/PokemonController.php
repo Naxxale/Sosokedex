@@ -15,13 +15,13 @@ class PokemonController extends BaseController
     {
         $repository = new PokemonRepository();
         return $repository->getPokemon();
-        //Requête sql
     }
 
-    //  obtenir un Pokémon spécifique par son type
-    protected function getByType($typeId) : array{
-        $repository = new PokemonRepository();
-        return $repository->getPokemonsByType($this->$typeId);
-    }
+        //  obtenir un Pokémon spécifique par son type
+        public function getByType(string $typeName) : array{
+            $repository = new PokemonRepository();
+            // Utilisation de l'identifiant de type (id) pour récupérer les Pokémon
+            return $repository->getPokemonsByType($typeName);
+        }
    
 }

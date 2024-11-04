@@ -58,4 +58,3 @@ function PokemonAffinity() {
 }
 
 export default PokemonAffinity;
-
